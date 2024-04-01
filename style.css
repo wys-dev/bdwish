@@ -5,7 +5,7 @@ html {
 }
 
 .bdimage {
-    background-image: url("https://cdn.pixabay.com/photo/2016/06/22/14/45/carnival-1473083_960_720.png");
+    background-image: url("https://cdn.pixabay.com/photo/2018/02/23/21/29/roses-frame-3176667_960_720.jpg");
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -40,7 +40,7 @@ hr {
 
 #top-img{
     position: absolute;
-    top: 27%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -48,7 +48,7 @@ hr {
 }
 
 img {
-    width: 150px;
+    width: 300px;
     aspect-ratio: 1;
     object-fit: cover;
     --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
