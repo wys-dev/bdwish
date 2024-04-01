@@ -1,0 +1,39 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bdimage {
+    background-image: url('https://cdn.pixabay.com/photo/2016/06/22/14/45/carnival-1473083_960_720.png');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: rgb(187, 14, 167);
+    font-size: 35px;
+  }
+  
+  
+  .bottomleft {
+    position: absolute;
+    color: red;
+    bottom:0;
+    left: 18px;
+  }
+  
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+  .countdown{
+      font-size: 40px;
+  }
