@@ -1,40 +1,68 @@
-
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
-  }
-  
-  .bdimage {
-    background-image: url('https://cdn.pixabay.com/photo/2016/06/22/14/45/carnival-1473083_960_720.png');
+}
+
+.bdimage {
+    background-image: url("https://cdn.pixabay.com/photo/2016/06/22/14/45/carnival-1473083_960_720.png");
     height: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
     color: rgb(187, 14, 167);
     font-size: 35px;
-  }
-  
-  
-  .bottomleft {
+}
+
+.bottomleft {
     position: absolute;
     color: red;
-    bottom:0;
+    bottom: 0;
     left: 18px;
-  }
-  
-  .middle {
+}
+
+.middle {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100vw;
-  }
-  
-  hr {
+}
+
+hr {
     margin: auto;
     width: 40%;
-  }
-  .countdown{
-      font-size: 40px;
-  }
+}
+.countdown {
+    font-size: 40px;
+}
+
+#top-img{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100vw;
+}
+
+img {
+    width: 150px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+    mask-border: var(--_m);
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+}
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+    img {
+        --_m: radial-gradient(at 70% 31%, var(--c) 29%, #0000 30%), radial-gradient(at 30% 31%, var(--c) 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+        -webkit-mask: var(--_m);
+        mask: var(--_m);
+    }
+}
