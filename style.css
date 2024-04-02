@@ -57,7 +57,6 @@ img {
     clip-path: polygon(-41% 0, 50% 91%, 141% 0);
 }
 
-/* fallback until better support for mask-border */
 @supports not (-webkit-mask-box-image: var(--_m)) {
     img {
         --_m: radial-gradient(at 70% 31%, var(--c) 29%, #0000 30%), radial-gradient(at 30% 31%, var(--c) 29%, #0000 30%),
@@ -66,3 +65,13 @@ img {
         mask: var(--_m);
     }
 }
+
+
+
+
+
+
+
+
+
+

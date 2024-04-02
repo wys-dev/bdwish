@@ -5,6 +5,11 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
+    <audio id="song" loop>
+        <source src="hbd.mp3">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
     <div class="bdimage">
         <div id="top-img">
             <img id="heart" src="https://cdn.pixabay.com/photo/2024/03/27/20/21/ai-generated-8659835_1280.jpg" alt="">
@@ -17,6 +22,19 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('load');
+            var audio = document.getElementById('song');
+            var played = false;
+
+            document.body.addEventListener('click', function () {
+                if (!played) {
+                    audio.play();
+                    played = true;
+                }
+            });
+        });
+
         var countDownDate = new Date("April 13, 2024 00:00:00").getTime();
 
         var countdownfunction = setInterval(function () {
