@@ -48,7 +48,7 @@ hr {
     width: 100vw;
 }
 
-.top-img img {
+#top-img img {
     width: 95px;
     aspect-ratio: 1;
     object-fit: cover;
