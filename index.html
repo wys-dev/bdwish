@@ -21,6 +21,8 @@
         </source>
         Your browser isn't invited for super fun audio time.
     </audio>
+
+
     <div class="bdimage">
 
         <div id="bdimage">
@@ -33,6 +35,26 @@
                 <hr>
                 <p id="tzw" class="countdown"></p>
             </div>
+        </div>
+
+        <div id="giftbox">
+            <div class="birthday-gift">
+                <div class="gift">
+                    <input id='click' type='checkbox'>
+                    <label class='click'></label>
+                    <div class="wishes">Happy Birthday!</div>
+                    <div class="sparkles">
+                        <div class="spark1"></div>
+                        <div class="spark2"></div>
+                        <div class="spark3"></div>
+                        <div class="spark4"></div>
+                        <div class="spark5"></div>
+                        <div class="spark6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="openbox()">Tap to open</button>
         </div>
 
 
@@ -161,7 +183,53 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     console.log('load');
+        //     var audio = document.getElementById('song');
+        //     var played = false;
+
+        //     document.body.addEventListener('click', function () {
+        //         if (!played) {
+        //             audio.play();
+        //             played = true;
+        //         }
+        //     });
+        // });
+
+        var countDownDate = new Date("April 12, 2024 14:52:00").getTime();
+
+        var countdownfunction = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById('wish-message-container').onclick = null;
+            document.getElementById("tzw").innerHTML = days + "ရက် " + hours + "နာရီ "
+                + minutes + "မိနစ် " + seconds + "စက္ကန့် ";
+
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+
+                document.getElementById("tzw").innerHTML = "HAPPY BIRTHDAY မ မွေးနေ့မှာပျော်ရွှင်ပါစေနော် မ";
+
+                var element = document.getElementById('bdimage');
+                element.style.display = 'none';
+
+                var element = document.getElementById('giftbox');
+                element.style.display = 'block';
+
+            }
+
+        }, 1000);
+
+
+
+        const openbox = () => {
+            var checkbox = document.getElementById('click');
+            checkbox.checked = !checkbox.checked;
+
             console.log('load');
             var audio = document.getElementById('song');
             var played = false;
@@ -172,7 +240,17 @@
                     played = true;
                 }
             });
-        });
+            setTimeout(() => {
+                var element = document.getElementById('giftbox');
+                element.style.display = 'none';
+
+                var element = document.getElementById('wish-message-container');
+                element.style.display = 'block';
+
+                fetchDataAndRunAnimation();
+            }, 3000);
+
+        }
 
         // Function to fetch data and run animation
         const fetchDataAndRunAnimation = () => {
@@ -475,35 +553,6 @@
                 tl.restart();
             });
         };
-
-        var countDownDate = new Date("April 12, 2024 11:20:00").getTime();
-
-        var countdownfunction = setInterval(function () {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById('wish-message-container').onclick = null;
-            document.getElementById("tzw").innerHTML = days + "ရက် " + hours + "နာရီ "
-                + minutes + "မိနစ် " + seconds + "စက္ကန့် ";
-
-            if (distance < 0) {
-                clearInterval(countdownfunction);
-
-                document.getElementById("tzw").innerHTML = "HAPPY BIRTHDAY မ မွေးနေ့မှာပျော်ရွှင်ပါစေနော် မ";
-
-                var element = document.getElementById('bdimage');
-                element.style.display = 'none';
-
-                var element = document.getElementById('wish-message-container');
-                element.style.display = 'block';
-
-                fetchDataAndRunAnimation();
-            }
-
-        }, 1000);
 
 
     </script>
